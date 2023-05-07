@@ -1,30 +1,34 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-import ResultCards from "../Components/ResultCards";
-import React from 'react';
+// import ResultCards from "../Components/ResultCards";
+import React, { useEffect, useState } from 'react';
 import TilsynModel from "../TilsynModel";
+import TilsynList from "../Components/TilsynList";
 
 
-async function FetchAPIData() {
+function FetchAPIData() {
+  const[data, setData] = useState<TilsynModel | undefined>(undefined); 
 
-    
-  const response = await axios.get("https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn");
-  const data: TilsynModel[] = response.data; 
-  console.log(data);
+  useEffect(() => {
+    async function fetch() {
+      const response = await axios.get("https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn");
+      const data: TilsynModel = response.data;
+      setData(data); 
+      return data; 
+    }
+    fetch(); 
+    console.log(fetch());
+  }, [])
 
-// function FetchAPIData() {
-
-//   async function getData() {
-//     const response = await axios.get("https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn");
-//     const data: TilsynModel[] = response.data; 
-//     return data; 
-//   }
-
-
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+  
   return (
     <div>
         hei
-        <ResultCards cards={data}></ResultCards>
+        {/* <ResultCards cards={data}></ResultCards> */}
+        <TilsynList tilsyn={data}></TilsynList>
     </div>
   );
 }

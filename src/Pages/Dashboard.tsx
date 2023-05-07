@@ -2,7 +2,6 @@ import {Button, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import FetchAPIData from "../API/FetchAPIData";
-import ResultCards from "../Components/ResultCards";
 
 export default function Dashboard(){
     
@@ -48,8 +47,7 @@ export default function Dashboard(){
             >
                 <SearchIcon></SearchIcon>
             </Button>
-            {/* <FetchAPIData></FetchAPIData> */}
-            {/* <ResultCards cards={[]}></ResultCards> */}
+            <FetchAPIData></FetchAPIData>
         </>
     )
 }
