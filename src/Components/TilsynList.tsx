@@ -40,7 +40,7 @@ const TilsynList: React.FC<Props> = ({ tilsyn }) => {
               <TableCell component="th" scope="row">
                 {row.navn}
               </TableCell>
-              <TableCell align="right">{row.dato}</TableCell>
+              <TableCell align="right">{`${row.dato.substring(0,2)}.${row.dato.substring(2,4)}.${row.dato.substring(4)}`}</TableCell>
               <TableCell align="right">{row.poststed}</TableCell>
               <TableCell align="right">{row.total_karakter}</TableCell>
               

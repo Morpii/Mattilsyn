@@ -23,11 +23,9 @@ function FetchAPIData() {
   if (!data) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <div>
-        hei
-        {/* <ResultCards cards={data}></ResultCards> */}
         <TilsynList tilsyn={data}></TilsynList>
     </div>
   );
