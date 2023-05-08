@@ -1,17 +1,22 @@
 import {Button, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FetchAPIData from "../API/FetchAPIData";
 
 export default function Dashboard(){
     
-    const [resturantNavn, setResturantNavn] = useState("");
+    const [search, setSearch] = useState("");
 
-    const handleButtonCLick = () => {
-        FetchAPIData(); 
-
-    }
+    // const handleButtonCLick = () => {
+    //     FetchAPIData(); 
+    // }
+    
+    // useEffect(() => {
         
+    // }, [resturantNavn])
+
+
+    console.log(search);
 
     return (
         <>
@@ -21,13 +26,14 @@ export default function Dashboard(){
                     size="small"
                     label="Resturant"
                     placeholder="Skriv inn resturant her"
-                    value={resturantNavn}
+                    value={search}
                     helperText=""
                     InputLabelProps={{
                         style: { 
                             fontFamily: 'quicksand', 
                             fontSize: '16px' }
                     }}
+                onChange={((e) => setSearch(e.target.value))}
                 />
             <Button
                 sx={{
@@ -43,11 +49,11 @@ export default function Dashboard(){
                         bgcolor: "#91DCC1"
                     }
                 }}
-                onClick={handleButtonCLick}
+                // onClick={handleButtonCLick}
             >
                 <SearchIcon></SearchIcon>
             </Button>
-            <FetchAPIData></FetchAPIData>
+            <FetchAPIData search={search} setSearch={setSearch}></FetchAPIData>
         </>
     )
 }
