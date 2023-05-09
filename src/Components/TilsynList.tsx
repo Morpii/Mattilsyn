@@ -1,10 +1,7 @@
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, TextField } from "@mui/material";
-import EntriesModel from "../EntriesModel";
-import TilsynModel from "../TilsynModel";
-import SearchIcon from '@mui/icons-material/Search';
+import EntriesModel from "../Models/EntriesModel";
+import TilsynModel from "../Models/TilsynModel";
 import { useEffect, useState } from "react";
-import FetchAPIData from "../API/FetchAPIData";
-import axios from "axios";
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
@@ -20,10 +17,8 @@ const TilsynList: React.FC<Props> = ({ tilsyn }) => {
 
     function FilterLatestEntry(tilsyn: TilsynModel){
         let latestDate: number = 0; 
-        let latestEntry: EntriesModel | undefined = undefined; 
 
         tilsyn.entries.map((entry) => {
-            //console.log(index)
             const currentDate = Number(entry.dato.slice(4, 8) + entry.dato.slice(2, 4) + entry.dato.slice(0, 2));
 
             if(currentDate > latestDate){
@@ -32,16 +27,13 @@ const TilsynList: React.FC<Props> = ({ tilsyn }) => {
             }
             
          })  
-         return latestEntry; 
     }
     
     useEffect(() => {
         FilterLatestEntry(tilsyn); 
     },[tilsyn]); 
 
-    // if(!FilterLatestEntry(tilsyn)){
-    //     return <div>Loading...</div>
-    //}
+    
     if(lastEntry === undefined){
         return <div>Loading...</div>
     }
@@ -61,8 +53,7 @@ const TilsynList: React.FC<Props> = ({ tilsyn }) => {
             return <SentimentVeryDissatisfiedIcon></SentimentVeryDissatisfiedIcon>
         }
     }
-
-    //console.log(lastEntry); 
+ 
 
     return (
         <TableContainer component={Paper}>

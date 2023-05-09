@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import TilsynModel from "../TilsynModel";
-import TilsynList from "../Components/TilsynList";
+import TilsynModel from "../Models/TilsynModel";
+import TilsynListMultiEntry from "../Components/TilsynListMultiEntry";
 
 
 type ChildProps = {
@@ -23,6 +23,7 @@ function FetchAPIData(props: ChildProps) {
       const response = await axios.get(`https://hotell.difi.no/api/json/mattilsynet/smilefjes/tilsyn?query=${props.search}`);
       const data: TilsynModel = response.data;
       setData(data); 
+      
       return data; 
     }
     fetch(); 
@@ -71,8 +72,8 @@ function FetchAPIData(props: ChildProps) {
         >
          </Button> */}
         {/* <SearchIcon></SearchIcon> */}
-        <TilsynList tilsyn={data}></TilsynList>
-        {/* <FilterLatestEntry tilsyn={data}></FilterLatestEntry> */}
+        {/* <TilsynList tilsyn={data}></TilsynList> */}
+        <TilsynListMultiEntry tilsyn={data}></TilsynListMultiEntry>
     </div>
   );
 }
