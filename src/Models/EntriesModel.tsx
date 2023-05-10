@@ -1,3 +1,5 @@
+// Model to put the API data in
+
 export default interface EntriesModel{
     tilsynsbesoektype: string;
     poststed: string;

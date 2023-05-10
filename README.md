@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# Mattilyn resultater  - README 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project members
+- Martin Husum
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview 📜
 
-### `npm start`
+This is a single-page web application that allows users to search for restaurants and be presented with the last inspecton from Mattilsynet. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The **front end** was written with `React`, utilising `TypeScript` and `axios`. The front end runs on `localhost:3000`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## **Install guide**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install and run it locally, consult the following steps: 
+    
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the front end repository with 
+    ```
+    https://github.com/Morpii/Mattilsyn.git
+    ```
+    or if you are using SSH 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+        git@github.com:Morpii/Mattilsyn.git
 
-### `npm run eject`
+2. `pull` the `main` branch down to your local machine, which also means you might have `remote add` if not automatically managed by cloning already.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### **Getting the _front end_ working**
+1.  Go to the folder containing your `front end`. 
+1.  Run `npm install`. 
+1.  Start the app with `npm start`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After following the above steps, the `React` app (front end) _should be_ up and running. It should start automatically after running the front end step 2. in your default browser, a the page should be presented to you. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**If there is the case that the app does not automatically start**:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open a browser of your choice and copy paste `localhost:3000`.
