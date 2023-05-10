@@ -4,6 +4,9 @@ import TilsynModel from "../Models/TilsynModel";
 import TilsynListMultiEntry from "../Components/TilsynListMultiEntry";
 
 
+// Component that fetch from the API every time the value in the input search box changes
+// Returns a sorted list of the lates results
+
 type ChildProps = {
   search: string;
   setSearch: (search: string) => void; 

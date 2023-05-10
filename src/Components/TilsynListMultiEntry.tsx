@@ -2,14 +2,14 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import EntriesModel from "../Models/EntriesModel";
 import TilsynModel from "../Models/TilsynModel";
 import { useEffect, useState } from "react";
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
-import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 import DateConverter from "../Utils/DateConverter";
 import DateFormatter from "../Utils/DateFormatter";
 import FindRightSmiley from "../Utils/FindRightSmiley";
 import FindRightColor from "../Utils/FindRightColor";
 
+
+// Component that show the latest inspection for each of the restaurant to the relevant seach
+// Returns a filtered table of the results
 
 interface Props {
   tilsyn: TilsynModel;
@@ -49,11 +49,11 @@ const TilsynListMultiEntry: React.FC<Props> = ({ tilsyn }) => {
     }
 
     return (
-            <TableContainer component={Paper}
-                sx={{
-                    width: "80%"
-                }}
-            >
+        <TableContainer component={Paper}
+            sx={{
+                width: "80%"
+            }}
+        >
             <Table sx={{ minWidth: 650, }} aria-label="simple table">
                 <TableHead>
                     <TableRow sx={{backgroundColor: "#e6e6e6"}}>
@@ -85,7 +85,7 @@ const TilsynListMultiEntry: React.FC<Props> = ({ tilsyn }) => {
                     ))}
                 </TableBody>
             </Table>
-            </TableContainer>        
+        </TableContainer>        
     );
 };
 

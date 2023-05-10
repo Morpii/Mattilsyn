@@ -3,6 +3,9 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
 
+
+// Function that calculates the smiley face according to the score Mattilsynet gave
+
 export default function FindRightSmiley(entry: EntriesModel) {
     if(!entry){
         return <div>Loading...</div>

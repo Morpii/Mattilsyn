@@ -1,5 +1,7 @@
 import EntriesModel from "../Models/EntriesModel";
 
+// Function that calculates color based on Mattilsyn score
+
 export default function FindRightColor(entry: EntriesModel){
     const totalScore: number = Number(entry.total_karakter); 
     //Green
